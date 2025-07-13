@@ -144,12 +144,29 @@ def make_move():
         print(f"🏆 Game over! Winner: {winner}")
         return jsonify({"winner": winner, "board": board})
 
+    # Don't make AI move immediately - let frontend handle the delay
+    # Just return the current state after player's move
+    return jsonify({
+        "board": board,
+        "current_turn": "O",  # AI's turn next
+        "winner": winner
+    })
+
+@app.route("/ai-move", methods=['POST'])
+def ai_move_endpoint():
+    """Separate endpoint for AI to make its move after delay"""
+    global current_turn, game_over, winner
+    
+    if game_over:
+        return jsonify({"error": "Game over."}), 400
+
     # AI move
     ai = ai_move()
     if ai:
         print(f"🤖 AI makes move at cell {ai}")
         board[ai] = 'O'
-        async_draw_mark('O', ai)
+        # Draw the AI move synchronously (wait for it to complete)
+        draw_mark('O', ai)
         winner, winning_line = check_winner()
         if winner:
             game_over = True
@@ -161,7 +178,7 @@ def make_move():
 
     return jsonify({
         "board": board,
-        "current_turn": current_turn,
+        "current_turn": "X",  # Player's turn next
         "winner": winner
     })
 
