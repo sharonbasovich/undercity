@@ -66,13 +66,13 @@ def result():
 
 @app.route("/testing")
 def testing():
-    
-    GPIO.output(tDIR, GPIO.HIGH)
+
+    GPIO.output(hDIR, GPIO.HIGH)
 
     for _ in range(200):  # One full revolution for 1.8° step motor
-        GPIO.output(tSTEP, GPIO.HIGH)
+        GPIO.output(hSTEP, GPIO.HIGH)
         time.sleep(0.001)
-        GPIO.output(tSTEP, GPIO.LOW)
+        GPIO.output(hSTEP, GPIO.LOW)
         time.sleep(0.001)
 
     # GPIO.cleanup()
