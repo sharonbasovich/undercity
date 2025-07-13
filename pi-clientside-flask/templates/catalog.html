@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="w-screen h-screen bg-black grid place-content-center select-none text-[#5bff85]">
+      <div>
+        <div class="px-4">
+            <span class="text-5xl">choose what you want. on the house.</span>
+        </div>
+
+        <div class="grid grid-cols-4 gap-4 text-2xl pt-2 px-4">
+        {% for item in items %}
+        <button>
+            <div class="border-2 border-[#5bff85] grid grid-flow-row justify-items-center p-2 text-center h-56">
+                <img src="{{ item.image_url }}" alt="{{ item.name }}" width="140">
+
+                <strong>{{ item.name }}</strong>
+
+                {% if item.in_stock %}
+                    <span class="in-stock text-green-500">In Stock</span>
+                {% else %}
+                    <span class="out-of-stock text-red-500">Out of Stock</span>
+                {% endif %}
+            </div>
+        </button>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
