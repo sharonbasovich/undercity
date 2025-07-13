@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+/* font-family: 'Source Sans 3', sans-serif; */
+body {
+	margin: 0;
+	font-family: 'JetBrains Mono', monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+.jetbrains-mono {
+	font-family: 'JetBrains Mono', monospace;
+}

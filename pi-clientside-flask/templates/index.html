@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="w-screen h-screen bg-black">
-      <h1 class="text-3xl font-bold underline text-[#5bff85]">
-        the inconvienent vending machine.
-      </h1>
+    <div class="w-screen h-screen bg-black grid place-content-center">
+
+      <div>
+        <h1 class="text-3xl font-bold text-[#5bff85]">
+          the inconvienent vending machine.
+        </h1>
+        <button class="border-4 border-solid border-[#5bff85] font-bold text-[#5bff85] p-3 mt-2">
+          view what's in stock.
+        </button>
+      </div>
     </div>
     
   </body>
