@@ -8,9 +8,51 @@
   </head>
   <body>
     <div class="w-screen h-screen bg-black grid place-content-center select-none text-[#5bff85]">
-      <div>
-        this is where you enter the code
+      <div class="p-5">
+        <span>you ordered a {{ item }}</span>
+          <div>
+            <span class="text-5xl">lets see if you will get it...</span>
+          
+            <form action="{{ url_for('redirect_to_result') }}" method="post">
+              <input id="input-insert" type="text" placeholder="enter a code" name="code" class="text-2xl w-100% border-2 border-[#5bff85] p-3 my-3 text-5xl">
+
+            <div>
+              <button type="button" class="numb text-3xl h-16 w-16 border-2 border-[#5bff85]">1</button>
+					    <button type="button" class="numb text-3xl h-16 w-16 border-2 border-[#5bff85]">2</button>
+					    <button type="button" class="numb text-3xl h-16 w-16 border-2 border-[#5bff85]">3</button>
+					    <button type="button" class="numb text-3xl h-16 w-16 border-2 border-[#5bff85]">4</button>
+					    <button type="button" class="numb text-3xl h-16 w-16 border-2 border-[#5bff85]">5</button>
+					    <button type="button" class="numb text-3xl h-16 w-16 border-2 border-[#5bff85]">6</button>
+              <button type="button" id="delete-btn" class="text-3xl h-16 w-16 border-2 border-red-500 text-red-500">RM</button>
+            </div>
+
+            <div class="pt-5">
+              <button type="submit" class="text-3xl h-16 border-2 px-3 border-[#5bff85]">continue</button>
+            </div>
+          </form>
+          <form action="{{ url_for('hello') }}">
+            <button class="text-3xl h-16 border-2 px-3 border-yellow-500 text-yellow-500 mt-3">cancel</button>
+          </form>
+        </div>
       </div>
     </div>
+
+    <script>
+      const input = document.getElementById('input-insert');
+      const numberButtons = document.querySelectorAll('.numb');
+      const deleteBtn = document.getElementById('delete-btn');
+
+      numberButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (input.value.length < 5) {
+            input.value += button.textContent;
+          }
+        });
+      });
+
+    deleteBtn.addEventListener('click', () => {
+        input.value = input.value.slice(0, -1);
+      });
+    </script>
   </body>
 </html>

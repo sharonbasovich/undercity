@@ -15,19 +15,21 @@
 
         <div class="grid grid-cols-4 gap-4 text-2xl pt-2 px-4">
         {% for item in items %}
-        <button>
-            <div class="border-2 border-[#5bff85] grid grid-flow-row justify-items-center p-2 text-center h-56">
-                <img src="{{ item.image_url }}" alt="{{ item.name }}" width="140">
-
-                <strong>{{ item.name }}</strong>
-
-                {% if item.in_stock %}
-                    <span class="in-stock text-green-500">In Stock</span>
-                {% else %}
-                    <span class="out-of-stock text-red-500">Out of Stock</span>
-                {% endif %}
-            </div>
-        </button>
+        {% if item.in_stock %}
+        <a href="{{ url_for('redirect_to_code', item=loop.index0) }}">
+          <div class="border-2 border-[#5bff85] grid grid-flow-row justify-items-center p-2 text-center h-56">
+            <img src="{{ item.image_url }}" alt="{{ item.name }}" width="140">
+            <strong>{{ item.name }}</strong>
+            <span class="in-stock text-green-500">In Stock</span>
+          </div>
+        </a>
+        {% else %}
+        <div class="border-2 border-[#5bff85] grid grid-flow-row justify-items-center p-2 text-center h-56">
+            <img src="{{ item.image_url }}" alt="{{ item.name }}" width="140">
+            <strong>{{ item.name }}</strong>
+            <span class="out-of-stock text-red-500">Out of Stock</span>
+        </div>
+        {% endif %}
         {% endfor %}
         </div>
       </div>
