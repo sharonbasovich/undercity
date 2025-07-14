@@ -128,18 +128,17 @@ def testing1():
     return "<p>running test!!!</p>"
 
 # pos for table
-@app.route("/testing2/")
-def testing2():
+def testing2_threaded():
     print(f"angle is currentlyyy {sTable.angle}")
     
     slow_move(sTable, sTable.angle or 0, 35)
-
     slow_move(sTable, sTable.angle or 35, 85)
-
     slow_move(sTable, sTable.angle or 85, 134)
-
     slow_move(sTable, sTable.angle or 134, 180)
-    
+
+@app.route("/testing2/")
+def testing2():
+    threading.Thread(target=testing2_threaded).start()
     return "<p>running test!!!</p>"
 
 if __name__ == "__main__":
