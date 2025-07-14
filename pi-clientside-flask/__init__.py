@@ -105,7 +105,7 @@ def testing():
 
 # down pos on arm
 @app.route("/testing1/")
-def testing():
+def testing1():
     return "<p>running test!!!</p>"
 
 if __name__ == "__main__":
