@@ -7,9 +7,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="w-screen h-screen bg-black grid place-content-center select-none text-[#5bff85]">
+    <div class="w-screen h-screen bg-black grid place-content-center select-none text-[#5bff85] p-5">
       <div>
-        this is the results: {{ code }}
+        <span class="text-3xl">are you sure you wanted a {{ wanted }}?</span>
+        <div>
+          {% if wanted == getting.name %}
+          <span class="text-5xl">lucky you today. you can have it!</span>
+          {% else %}
+          <span class="text-5xl">here's a {{ getting.name }} instead. enjoy.</span>
+          {% endif %}
+
+          <div class="pt-5">
+            <img src="{{ getting.image_url }}" width="200">
+          </div>
+
+          <form action="{{ url_for('hello') }}">
+            <button class="text-3xl h-16 border-2 px-3 border-[#5bff85] mt-3">exit</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>

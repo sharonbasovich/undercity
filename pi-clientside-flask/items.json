@@ -1,10 +1,10 @@
 [
-  {"name": "Coke", "in_stock": true, "image_url": "/static/images/coke.png"},
-  {"name": "Coke", "in_stock": false, "image_url": "/static/images/coke.png"},
-  {"name": "Sprite", "in_stock": false, "image_url": "/static/images/sprite.png"},
-  {"name": "Sprite", "in_stock": false, "image_url": "/static/images/sprite.png"},
-  {"name": "Apple Juice", "in_stock": false, "image_url": "/static/images/apple.png"},
-  {"name": "Apple Juice", "in_stock": false, "image_url": "/static/images/apple.png"},
-  {"name": "Apple Juice", "in_stock": false, "image_url": "/static/images/apple.png"},
-  {"name": "Bubbly Lemon", "in_stock": false, "image_url": "/static/images/lemon.png"}
+  {"name": "Coke", "in_stock": true, "angle": 45, "image_url": "/static/images/coke.png"},
+  {"name": "Coke", "in_stock": true, "angle": 45, "image_url": "/static/images/coke.png"},
+  {"name": "Sprite", "in_stock": true, "angle": 45, "image_url": "/static/images/sprite.png"},
+  {"name": "Sprite", "in_stock": true, "angle": 45, "image_url": "/static/images/sprite.png"},
+  {"name": "Apple Juice", "in_stock": true, "angle": 45, "image_url": "/static/images/apple.png"},
+  {"name": "Apple Juice", "in_stock": true, "angle": 45, "image_url": "/static/images/apple.png"},
+  {"name": "Apple Juice", "in_stock": true, "angle": 45, "image_url": "/static/images/apple.png"},
+  {"name": "Bubbly Lemon", "in_stock": true, "angle": 45, "image_url": "/static/images/lemon.png"}
 ]
