@@ -114,5 +114,12 @@ def testing1():
     
     return "<p>running test!!!</p>"
 
+@app.route("/testing2/")
+def testing2():
+    print(f"angle is currentlyyy {sTable.angle}")
+    sArm.angle = 22.5
+    
+    return "<p>running test!!!</p>"
+
 if __name__ == "__main__":
     app.run()
