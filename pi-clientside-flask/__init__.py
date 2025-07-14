@@ -114,6 +114,7 @@ def testing1():
     
     return "<p>running test!!!</p>"
 
+# pos for table
 @app.route("/testing2/")
 def testing2():
     print(f"angle is currentlyyy {sTable.angle}")
