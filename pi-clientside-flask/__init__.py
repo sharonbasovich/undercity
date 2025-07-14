@@ -11,7 +11,10 @@ app = Flask(__name__)
 
 factory = PiGPIOFactory()
 
+# arm
 servo1 = AngularServo(14, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
+
+# table
 servo2 = AngularServo(15, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
 
 itemIndexObject = 0
@@ -106,6 +109,9 @@ def testing():
 # down pos on arm
 @app.route("/testing1/")
 def testing1():
+    print(f"angle is currently {servo2.angle}")
+    servo2.angle = 90
+    
     return "<p>running test!!!</p>"
 
 if __name__ == "__main__":
