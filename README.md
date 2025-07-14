@@ -37,7 +37,7 @@ Created at HackClub's undercity, Drink Not Found is a system where you play Tic-
 ---
 
 ## Frontend (`blot-board-blitz`)
-
+### [The frontend repo](https://github.com/sharonbasovich/blot-board-blitz)
 ### Setup
 
 ```bash
