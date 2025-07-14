@@ -109,7 +109,7 @@ def serve_threaded():
     
     time.sleep(3)
 
-    sArm = 98
+    sArm.angle = 98
 
 @app.route('/result/')
 def result():
