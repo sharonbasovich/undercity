@@ -88,7 +88,7 @@ def result():
 def wrong():
     return render_template('wrong.html')
 
-# testing all, use w/o cans!!!!!!!!!!
+# testing all, use w/o cans!!!!!!!!!
 def sweep(servo):
     for angle in range(0, 181, 10):
         servo.angle = angle
