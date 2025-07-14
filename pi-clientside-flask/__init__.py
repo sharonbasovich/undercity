@@ -100,6 +100,8 @@ def serve_threaded():
 
     time.sleep(3)
 
+    sArm.angle = 98
+
     if inverted:
         sArm.angle = 180
     else:
