@@ -12,13 +12,10 @@ app = Flask(__name__)
 factory = PiGPIOFactory()
 
 # arm
-# arm
-servo1 = AngularServo(14, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
+sArm = AngularServo(14, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
 
 # table
-
-# table
-servo2 = AngularServo(15, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
+sTable = AngularServo(15, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
 
 itemIndexObject = 0
                                                                                                   
@@ -105,15 +102,15 @@ def sweep(servo):
 
 @app.route("/testing/")
 def testing():
-    sweep(servo1)
-    sweep(servo2)
+    sweep(sArm)
+    sweep(sTable)
     return "<p>running test!!!</p>"
 
 # down pos on arm
 @app.route("/testing1/")
 def testing1():
-    print(f"angle is currentlyyy {servo2.angle}")
-    servo1.angle = 90
+    print(f"angle is currentlyyy {sArm.angle}")
+    sArm.angle = 95
     
     return "<p>running test!!!</p>"
 
