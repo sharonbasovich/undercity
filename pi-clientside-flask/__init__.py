@@ -20,6 +20,10 @@ sTable = AngularServo(15, min_angle=0, max_angle=180, min_pulse_width=0.0005, ma
 
 itemIndexObject = 0
 
+getting = 0
+
+# initial arm angle
+sArm.angle = 98
 
 def slow_move(servo, start, end, step=1, delay=0.02):
     """Move servo from start to end in small steps."""
@@ -86,8 +90,29 @@ def redirect_to_result():
     else:
         return redirect(url_for('wrong'))
 
+def serve_threaded():
+    print(f"angle is currentlyyy {sTable.angle}")
+
+    angle = getting["angle"]
+    inverted = getting["inverted"]
+
+    slow_move(sTable, sTable.angle or 0, angle)
+
+    time.sleep(3)
+
+    if inverted:
+        sArm.angle = 180
+    else:
+        sArm.angle = 0
+    
+    time.sleep(3)
+
+    sArm = 98
+
 @app.route('/result/')
 def result():
+    global getting
+
     # you wanted a #, you get a #!
     # code = request.args.get('code')
     print(f"ok please be right!!!!!!!!!! {itemIndexObject}")
@@ -97,6 +122,8 @@ def result():
     in_stock_items = [item for item in items if item.get("in_stock")]
 
     getting = random.choice(in_stock_items)
+
+    threading.Thread(target=serve_threaded).start()
 
     return render_template('result.html', wanted = name, getting = getting)
 
