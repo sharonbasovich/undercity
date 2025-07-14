@@ -121,7 +121,7 @@ def testing2():
     print(f"angle is currentlyyy {sTable.angle}")
     sTable.angle = 0
     time.sleep(0.3)
-    sTable.angle = 25
+    sTable.angle = 45
     
     return "<p>running test!!!</p>"
 
