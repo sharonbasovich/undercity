@@ -19,7 +19,19 @@ sArm = AngularServo(14, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_
 sTable = AngularServo(15, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
 
 itemIndexObject = 0
-                                                                                                  
+
+
+def slow_move(servo, start, end, step=1, delay=0.02):
+    """Move servo from start to end in small steps."""
+    if start < end:
+        angle_range = range(int(start), int(end)+1, step)
+    else:
+        angle_range = range(int(start), int(end)-1, -step)
+    
+    for angle in angle_range:
+        servo.angle = angle
+        time.sleep(delay)
+
 @app.route("/")
 def hello():
     return render_template('index.html')
@@ -119,9 +131,8 @@ def testing1():
 @app.route("/testing2/")
 def testing2():
     print(f"angle is currentlyyy {sTable.angle}")
-    sTable.angle = 0
-    time.sleep(0.3)
-    sTable.angle = 45
+    
+    slow_move(sTable, sTable.angle or 0, 35)
     
     return "<p>running test!!!</p>"
 
