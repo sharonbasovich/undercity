@@ -12,7 +12,10 @@ app = Flask(__name__)
 factory = PiGPIOFactory()
 
 # arm
+# arm
 servo1 = AngularServo(14, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
+
+# table
 
 # table
 servo2 = AngularServo(15, min_angle=0, max_angle=180, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
