@@ -112,8 +112,9 @@ def draw_winning_line(winning_cells):
     start_x, start_y = centers[0]
     end_x, end_y = centers[2]
     
-    pen_down()
+    pen_up()
     go(start_x, start_y)
+    pen_down()
     go(end_x, end_y)
     pen_up()
 
