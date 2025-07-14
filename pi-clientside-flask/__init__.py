@@ -132,11 +132,11 @@ def testing2_threaded():
     print(f"angle is currentlyyy {sTable.angle}")
     
     slow_move(sTable, sTable.angle or 0, 35)
-    time.sleep(0.5)
+    time.sleep(5)
     slow_move(sTable, sTable.angle or 35, 85)
-    time.sleep(0.5)
+    time.sleep(5)
     slow_move(sTable, sTable.angle or 85, 134)
-    time.sleep(0.5)
+    time.sleep(5)
     slow_move(sTable, sTable.angle or 134, 180)
 
 @app.route("/testing2/")
