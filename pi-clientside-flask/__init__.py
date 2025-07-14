@@ -133,6 +133,12 @@ def testing2():
     print(f"angle is currentlyyy {sTable.angle}")
     
     slow_move(sTable, sTable.angle or 0, 35)
+
+    slow_move(sTable, sTable.angle or 35, 85)
+
+    slow_move(sTable, sTable.angle or 85, 134)
+
+    slow_move(sTable, sTable.angle or 134, 180)
     
     return "<p>running test!!!</p>"
 

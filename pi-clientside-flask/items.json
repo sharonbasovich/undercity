@@ -1,10 +1,10 @@
 [
-  {"name": "Coke", "in_stock": true, "angle": 45, "image_url": "/static/images/coke.png"},
-  {"name": "Coke", "in_stock": true, "angle": 45, "image_url": "/static/images/coke.png"},
-  {"name": "Sprite", "in_stock": true, "angle": 45, "image_url": "/static/images/sprite.png"},
-  {"name": "Sprite", "in_stock": true, "angle": 45, "image_url": "/static/images/sprite.png"},
-  {"name": "Apple Juice", "in_stock": true, "angle": 45, "image_url": "/static/images/apple.png"},
-  {"name": "Apple Juice", "in_stock": true, "angle": 45, "image_url": "/static/images/apple.png"},
-  {"name": "Apple Juice", "in_stock": true, "angle": 45, "image_url": "/static/images/apple.png"},
-  {"name": "Bubbly Lemon", "in_stock": true, "angle": 45, "image_url": "/static/images/lemon.png"}
+  {"name": "Coke", "in_stock": true, "angle": 35, "image_url": "/static/images/nosugar.png"},
+  {"name": "Sprite", "in_stock": true, "angle": 85, "image_url": "/static/images/sprite.png"},
+  {"name": "Bubbly Lemon", "in_stock": true, "angle": 134, "image_url": "/static/images/lemon.png"},
+  {"name": "Passionfruit", "in_stock": true, "angle": 180, "image_url": "/static/images/passionfruit.png"},
+  {"name": "Diet Coke", "in_stock": true, "angle": 30, "image_url": "/static/images/.png"},
+  {"name": "Dr. Pepper", "in_stock": true, "angle": 65, "image_url": "/static/images/.png"},
+  {"name": "Canada Dry", "in_stock": true, "angle": 100, "image_url": "/static/images/.png"},
+  {"name": "7 Up", "in_stock": true, "angle": 135, "image_url": "/static/images/.png"}
 ]
