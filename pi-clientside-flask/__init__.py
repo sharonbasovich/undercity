@@ -2,6 +2,7 @@ from time import sleep
 import random
 import threading
 import json
+import time
 from flask import Flask, render_template, redirect, url_for, request # type: ignore
 
 from gpiozero import AngularServo # type: ignore
@@ -118,6 +119,8 @@ def testing1():
 @app.route("/testing2/")
 def testing2():
     print(f"angle is currentlyyy {sTable.angle}")
+    sTable.angle = 0
+    time.sleep(0.3)
     sTable.angle = 25
     
     return "<p>running test!!!</p>"
