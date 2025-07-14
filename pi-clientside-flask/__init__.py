@@ -112,7 +112,7 @@ def testing():
 # down pos on arm
 @app.route("/testing1/")
 def testing1():
-    print(f"angle is currently {servo2.angle}")
+    print(f"angle is currentlyyy {servo2.angle}")
     servo1.angle = 90
     
     return "<p>running test!!!</p>"
