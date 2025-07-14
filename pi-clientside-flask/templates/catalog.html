@@ -34,17 +34,5 @@
         </div>
       </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js" integrity="sha512-zN6KYOtONNTOGXz0RkWX2EpavN9VdIs+2w+To+fhciFv83YA9maUpi2lzZWrOfKXdFIZZomWufBznkyHi3a8oQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-      const socket = io();
-
-      socket.on('redirect_to_code', function(data) {
-        const itemIndex = data.item;
-        console.log("Redirecting to code for item:", itemIndex);
-        window.location.href = `/redirect-to-code?item=${itemIndex}`;
-      });
-    </script>
   </body>
 </html>

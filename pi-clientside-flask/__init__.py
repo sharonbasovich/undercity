@@ -3,14 +3,12 @@ import random
 import threading
 import json
 import time
-from flask import Flask, render_template, redirect, url_for, request
-from flask_socketio import SocketIO, emit
+from flask import Flask, render_template, redirect, url_for, request # type: ignore
 
-from gpiozero import AngularServo, Button
-from gpiozero.pins.pigpio import PiGPIOFactory
+from gpiozero import AngularServo # type: ignore
+from gpiozero.pins.pigpio import PiGPIOFactory # type: ignore
 
 app = Flask(__name__)
-socketio = SocketIO(app)
 
 factory = PiGPIOFactory()
 
@@ -63,9 +61,7 @@ def catalog():
 
 @app.route('/redirect-to-code')
 def redirect_to_code():
-    global itemIndexObject
     index = request.args.get('item')
-    itemIndexObject = int(index)
     return redirect(url_for('code', item=index))
 
 @app.route('/code/')
@@ -182,15 +178,5 @@ def testing2():
     threading.Thread(target=testing2_threaded).start()
     return "<p>running test!!!</p>"
 
-# arcade button on GPIO 18
-arcade_button = Button(18, pull_up=False, bounce_time=0.2)
-
-def on_button_pressed():
-    global itemIndexObject
-    print(f"[GPIO] Button pressed, emitting socket redirect for item {itemIndexObject}")
-    socketio.emit('redirect_to_code', {'item': itemIndexObject})
-
-arcade_button.when_pressed = on_button_pressed
-
 if __name__ == "__main__":
-    socketio.run(app, host='0.0.0.0', port=5000)
+    app.run()
