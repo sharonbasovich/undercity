@@ -62,6 +62,46 @@ npm run dev
 
 ---
 
+## Frontend 2 (`pi-clientside-flask`)
+### [The frontend repo](https://github.com/sharonbasovich/undercity/tree/main/pi-clientside-flask)
+### Setup
+
+```bash
+ssh pi@localipaddress
+cd undercity/pi-clientside-flask
+
+# done once
+pip install flask gpiozero pigpio
+sudo systemctl start pigpiod
+
+# this runs the main python script + starts kiosk mode full screen on the webapp
+sudo python __init__.py & chromium-browser --noerrdialogs --kiosk --incognito http://127.0.0.1:5000
+
+
+# workflow for new updates
+# ctrl c
+sudo lsof -i :5000
+kill
+git pull
+# run the python/chromium command again and you're good
+```
+
+- Runs on [localhost:5000](http://localhost:5000) and goes into kiosk mode
+- Main pages:
+  - `/` — Main screen with button to catalog
+  - `/catalog` — Shows all of the drinks in stock to choose from
+  - `/code` - Enter a code from the tic-tac-toe game to get your drink
+  - `/result` - Shows the chosen drink and tasks the gpio to vend a different drink that isnt what you chose
+  - `/wrong` - Entering a wrong code goes here lol
+  - `/testing(add other nums here)` - Pages meant to be used for debugging/getting calibration angles for vending
+
+### Features
+
+- **Flask:** Originally chose a pico mcu, but limitations + more made us migrate to a rpi4 solution that can **run both html ui and control gpio** at the **same time**, using flask as a backend.
+- **Vending Machine:** Built with two servo motors, was able to utilize a full 360 turntable by having the arm swing both directions. (originally planned to use 2x steppers)
+
+---
+
 ## Backend (`blot-backend`)
 
 ### Setup
