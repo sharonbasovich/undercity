@@ -11,6 +11,7 @@ Created at HackClub's undercity, Drink Not Found is a system where you play Tic-
 - [Features](#features)
 - [Architecture](#architecture)
 - [Frontend (blot-board-blitz)](#frontend-blot-board-blitz)
+- [Frontend Two (pi-clientside-flask)](#frontend-two-pi-clientside-flask)
 - [Backend (blot-backend)](#backend-blot-backend)
 - [Hardware (Blot Plotter)](#hardware-blot-plotter)
 - [Development & Testing](#development--testing)
@@ -62,8 +63,8 @@ npm run dev
 
 ---
 
-## Frontend 2 (`pi-clientside-flask`)
-### [The frontend repo](https://github.com/sharonbasovich/undercity/tree/main/pi-clientside-flask)
+## Frontend Two (`pi-clientside-flask`)
+### [The second frontend repo](https://github.com/sharonbasovich/undercity/tree/main/pi-clientside-flask)
 ### Setup
 
 ```bash
