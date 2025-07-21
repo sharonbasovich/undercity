@@ -1,6 +1,8 @@
 # 404: Drink Not Found
 <img width="1417" height="667" alt="image" src="https://github.com/user-attachments/assets/a292e0cc-53e4-427b-acbb-894699e0bfe8" />
 
+[Video Showcase](https://www.youtube.com/watch?v=RUoa9E2qlYo)
+
 ## About
 Created at HackClub's undercity, Drink Not Found is a system where you play Tic-Tac-Toe using a drawing machine against AI-buddy Auto ([credit: Paolo](https://www.youtube.com/watch?v=M4BQyCwvZE4)). If you win, you can pick a drink from the vending machine, and randomly get any drink except that one. Also, you contribute to a unique mosaic.
 
